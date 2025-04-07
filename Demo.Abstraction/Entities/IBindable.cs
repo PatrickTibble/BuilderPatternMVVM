@@ -3,6 +3,6 @@
     public interface IBindable
     {
         IDictionary<string, IList<Action>> BindingSet { get; }
-        void AddBinding<T>(string propertyName, Action<T> propertyChanged);
+        void AddBinding(string propertyName, Action propertyChanged);
     }
 }

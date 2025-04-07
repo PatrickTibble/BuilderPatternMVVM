@@ -117,13 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AppVersion" xml:space="preserve">
-    <value>version {0}</value>
+  <data name="CounterButtonHint" xml:space="preserve">
+    <value>Counts the number of times you click</value>
   </data>
-  <data name="ClickCount" xml:space="preserve">
-    <value>Clicked {0} time</value>
+  <data name="DotNetBotDescription" xml:space="preserve">
+    <value>dot net bot in a hovercraft number nine</value>
   </data>
-  <data name="Copyright" xml:space="preserve">
-    <value>(c) 2025 {0}</value>
+  <data name="WelcomeToDotNetNine" xml:space="preserve">
+    <value>Welcome to dot net Multi platform App U I</value>
   </data>
 </root>

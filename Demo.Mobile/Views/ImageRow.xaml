@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:Demo.Core.ViewModels;assembly=Demo.Core"
+    x:DataType="vm:ImageRowViewModel"
+    xmlns:converters="clr-namespace:Demo.Mobile.Converters"
+    x:Class="Demo.Mobile.Views.ImageRow">
+    <VerticalStackLayout
+        Margin="30,12">
+        <Image
+            Source="{Binding Source, Converter={converters:ImagesToSourceConverter}}"
+            HeightRequest="185"
+            Aspect="AspectFit"
+            SemanticProperties.Description="{Binding SemanticDescription}" />
+    </VerticalStackLayout>
+</ContentView>

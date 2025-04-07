@@ -30,7 +30,7 @@ namespace Demo.Mobile.Extensions
             var locator = new MauiPageLocator();
             return services
                 .AddSingleton<IViewLocator<Page>>(locator)
-                .RegisterShared<Page, BuildablePage, ShellPageModel>(locator);
+                .RegisterShared<Page, BuildablePage, MainPageModel>(locator);
         }
 
         public static IServiceCollection RegisterShared<TBaseView, TView, TObservable>(this IServiceCollection services, IViewLocator<TBaseView> locator)

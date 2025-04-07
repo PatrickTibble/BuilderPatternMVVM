@@ -68,5 +68,33 @@ namespace Demo.Core.Localization {
                 return ResourceManager.GetString("AppTitle", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click me.
+        /// </summary>
+        public static string ClickMe {
+            get {
+                return ResourceManager.GetString("ClickMe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hello, World!.
+        /// </summary>
+        public static string HelloWorld {
+            get {
+                return ResourceManager.GetString("HelloWorld", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Welcome to
+        ///.NET Multi-platform App UI.
+        /// </summary>
+        public static string WelcomeToMaui {
+            get {
+                return ResourceManager.GetString("WelcomeToMaui", resourceCulture);
+            }
+        }
     }
 }

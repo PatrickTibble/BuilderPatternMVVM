@@ -7,8 +7,11 @@ namespace Demo.Mobile.Templates
     {
         private readonly IReadOnlyDictionary<Type, DataTemplate> _templates = new Dictionary<Type, DataTemplate>()
         {
+            { typeof(ButtonRowViewModel), new DataTemplate(typeof(ButtonRow)) },
+            { typeof(ImageRowViewModel), new DataTemplate(typeof(ImageRow)) },
             { typeof(PrimaryHeaderViewModel), new DataTemplate(typeof(PrimaryHeaderRow)) },
-            { typeof(PrimaryFooterViewModel), new DataTemplate(typeof(PrimaryFooterRow)) }
+            { typeof(PrimaryFooterViewModel), new DataTemplate(typeof(PrimaryFooterRow)) },
+            { typeof(TextRowViewModel), new DataTemplate(typeof(TextRow)) }
         };
 
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)

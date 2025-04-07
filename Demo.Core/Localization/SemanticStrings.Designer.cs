@@ -22,14 +22,14 @@ namespace Demo.Core.Localization {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class FormatStrings {
+    public class SemanticStrings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal FormatStrings() {
+        internal SemanticStrings() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Demo.Core.Localization {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Demo.Core.Localization.FormatStrings", typeof(FormatStrings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Demo.Core.Localization.SemanticStrings", typeof(SemanticStrings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,29 +61,29 @@ namespace Demo.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to version {0}.
+        ///   Looks up a localized string similar to Counts the number of times you click.
         /// </summary>
-        public static string AppVersion {
+        public static string CounterButtonHint {
             get {
-                return ResourceManager.GetString("AppVersion", resourceCulture);
+                return ResourceManager.GetString("CounterButtonHint", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Clicked {0} time.
+        ///   Looks up a localized string similar to dot net bot in a hovercraft number nine.
         /// </summary>
-        public static string ClickCount {
+        public static string DotNetBotDescription {
             get {
-                return ResourceManager.GetString("ClickCount", resourceCulture);
+                return ResourceManager.GetString("DotNetBotDescription", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to (c) 2025 {0}.
+        ///   Looks up a localized string similar to Welcome to dot net Multi platform App U I.
         /// </summary>
-        public static string Copyright {
+        public static string WelcomeToDotNetNine {
             get {
-                return ResourceManager.GetString("Copyright", resourceCulture);
+                return ResourceManager.GetString("WelcomeToDotNetNine", resourceCulture);
             }
         }
     }

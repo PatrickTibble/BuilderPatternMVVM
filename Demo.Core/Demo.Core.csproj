@@ -30,6 +30,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>FormatStrings.resx</DependentUpon>
     </Compile>
+    <Compile Update="Localization\SemanticStrings.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SemanticStrings.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -40,6 +45,10 @@
     <EmbeddedResource Update="Localization\FormatStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>FormatStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Localization\SemanticStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SemanticStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 

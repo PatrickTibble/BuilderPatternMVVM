@@ -1,7 +1,9 @@
 ﻿using Demo.Abstraction.Entities;
+using Demo.Abstraction.Models;
 using Demo.Core.ViewModels;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Windows.Input;
 
 namespace Demo.Core.Entities
 {
@@ -9,15 +11,52 @@ namespace Demo.Core.Entities
     {
         private List<INotifyPropertyChanged> _items = [];
 
+        public IViewModelCollectionBuilder AddButtonRow(string text, ICommand command)
+        {
+            _items.Add(new ButtonRowViewModel
+            {
+                Text = text,
+                Command = command
+            });
+
+            return this;
+        }
+
+        public IViewModelCollectionBuilder AddImageRow(Images image)
+        {
+            _items.Add(new ImageRowViewModel
+            {
+                Source = image
+            });
+
+            return this;
+        }
+
         public IViewModelCollectionBuilder AddPrimaryPageFooter(string version, string copyright)
         {
-            _items.Add(new PrimaryFooterViewModel(version, copyright));
+            _items.Add(new PrimaryFooterViewModel
+            {
+                Version = version,
+                Copyright = copyright
+            });
             return this;
         }
 
         public IViewModelCollectionBuilder AddPrimaryPageHeader(string headerTitle)
         {
-            _items.Add(new PrimaryHeaderViewModel(headerTitle));
+            _items.Add(new PrimaryHeaderViewModel
+            {
+                AppTitle = headerTitle
+            });
+            return this;
+        }
+
+        public IViewModelCollectionBuilder AddTextRow(string text)
+        {
+            _items.Add(new TextRowViewModel
+            {
+                Text = text
+            });
             return this;
         }
 
@@ -40,7 +79,7 @@ namespace Demo.Core.Entities
             if (_items.LastOrDefault() is IBindable bindable
                 && bindable is T binding)
             {
-                bindable.AddBinding(propertyName, propertyChanged);
+                bindable.AddBinding(propertyName, () => propertyChanged(binding));
             }
 
             return this;
@@ -50,7 +89,18 @@ namespace Demo.Core.Entities
         {
             if (_items.LastOrDefault() is T binding)
             {
-                bindable.AddBinding(propertyName, propertyChanged);
+                bindable.AddBinding(propertyName, () => propertyChanged(binding));
+            }
+
+            return this;
+        }
+
+        public IViewModelCollectionBuilder WithSemanticProperties(SemanticOptions level, string semanticDescription)
+        {
+            if (_items.LastOrDefault() is ISemanticViewModel vm)
+            {
+                vm.SemanticLevel = level;
+                vm.SemanticDescription = semanticDescription;
             }
 
             return this;

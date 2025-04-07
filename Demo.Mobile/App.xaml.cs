@@ -14,7 +14,7 @@ namespace Demo.Mobile
         protected override Window CreateWindow(IActivationState? activationState)
         {
             var locator = Resolver.Resolve<IViewLocator<Page>>();
-            var page = locator.LocateFor<ShellPageModel>();
+            var page = locator.LocateFor<MainPageModel>();
             
             if (page.BindingContext is IPrepare prep)
             {

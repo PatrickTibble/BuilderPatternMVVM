@@ -120,4 +120,14 @@
   <data name="AppTitle" xml:space="preserve">
     <value>Builder Pattern with MVVM</value>
   </data>
+  <data name="ClickMe" xml:space="preserve">
+    <value>Click me</value>
+  </data>
+  <data name="HelloWorld" xml:space="preserve">
+    <value>Hello, World!</value>
+  </data>
+  <data name="WelcomeToMaui" xml:space="preserve">
+    <value>Welcome to
+.NET Multi-platform App UI</value>
+  </data>
 </root>

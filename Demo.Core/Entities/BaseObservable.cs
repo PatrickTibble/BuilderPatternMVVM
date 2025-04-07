@@ -16,20 +16,15 @@ namespace Demo.Core.Entities
             return Task.CompletedTask;
         }
 
-        public void AddBinding<T>(string propertyName, Action<T> propertyChanged)
+        public void AddBinding(string propertyName, Action propertyChanged)
         {
-            if (this is not T target)
-            {
-                return;
-            }
-
             if (!(BindingSet.TryGetValue(propertyName, out var list) && list.Count > 0))
             {
                 list = new List<Action>();
                 BindingSet.Add(propertyName, list);
             }
 
-            list.Add(() => propertyChanged(target));
+            list.Add(propertyChanged);
         }
 
         protected override void OnPropertyChanged(PropertyChangedEventArgs e)

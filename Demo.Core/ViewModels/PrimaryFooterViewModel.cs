@@ -6,15 +6,9 @@ namespace Demo.Core.ViewModels
     public partial class PrimaryFooterViewModel : BaseObservable
     {
         [ObservableProperty]
-        private string _version;
+        private string _version = string.Empty;
 
         [ObservableProperty]
-        private string _copyright;
-
-        public PrimaryFooterViewModel(string version, string copyright)
-        {
-            _version = version;
-            _copyright = copyright;
-        }
+        private string _copyright = string.Empty;
     }
 }

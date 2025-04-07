@@ -6,11 +6,6 @@ namespace Demo.Core.ViewModels
     public partial class PrimaryHeaderViewModel : BaseObservable
     {
         [ObservableProperty]
-        private string _appTitle;
-
-        public PrimaryHeaderViewModel(string appTitle)
-        {
-            _appTitle = appTitle;
-        }
+        private string _appTitle = string.Empty;
     }
 }
