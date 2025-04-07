@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pm="clr-namespace:Demo.Core.PageModels;assembly=Demo.Core"
+    xmlns:converters="clr-namespace:Demo.Mobile.Converters"
+    x:DataType="pm:BuildablePageModel"
+    x:Class="Demo.Mobile.Pages.BuildablePage">
+    <Grid
+        VerticalOptions="FillAndExpand">
+        <StackLayout
+            VerticalOptions="FillAndExpand">
+            <StackLayout
+                BindableLayout.ItemsSource="{Binding Headers}"
+                BindableLayout.ItemTemplateSelector="{StaticResource BuildableCollectionTemplateSelector}"
+                IsVisible="{Binding Headers, Converter={converters:CollectionIsNotNullOrEmptyConverter}}" />
+            <CollectionView
+                VerticalOptions="FillAndExpand"
+                ItemsSource="{Binding Items}"
+                ItemTemplate="{StaticResource BuildableCollectionTemplateSelector}" />
+            <StackLayout
+                BindableLayout.ItemsSource="{Binding Footers}"
+                BindableLayout.ItemTemplateSelector="{StaticResource BuildableCollectionTemplateSelector}"
+                IsVisible="{Binding Footers, Converter={converters:CollectionIsNotNullOrEmptyConverter}}" />
+        </StackLayout>
+
+        <ActivityIndicator
+            IsRunning="{Binding IsLoading}"
+            IsVisible="{Binding IsLoading}"
+            Scale="1.8"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="CenterAndExpand" />
+    </Grid>
+</ContentPage>

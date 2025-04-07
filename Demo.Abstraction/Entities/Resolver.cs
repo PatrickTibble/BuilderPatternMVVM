@@ -14,8 +14,10 @@ namespace Demo.Abstraction.Entities
         public static T Resolve<T>()
             where T : notnull
         {
+            System.Diagnostics.Debug.Assert(_providerFunc != null, "Provider Retrieval Function isn't set.");
             var provider = _providerFunc?.Invoke();
-            ArgumentNullException.ThrowIfNull(provider);
+
+            System.Diagnostics.Debug.Assert(provider != null, $"Unable to retrieve ServiceProvider.");
 
             return provider.GetRequiredService<T>();
         }

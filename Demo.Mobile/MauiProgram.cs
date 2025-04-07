@@ -1,4 +1,5 @@
-﻿using Demo.Core.Extensions;
+﻿using Demo.Abstraction.Entities;
+using Demo.Core.Extensions;
 using Demo.Mobile.Extensions;
 using Microsoft.Extensions.Logging;
 
@@ -8,6 +9,7 @@ namespace Demo.Mobile
     {
         public static MauiApp CreateMauiApp()
         {
+            Resolver.SetServiceProvider(() => IPlatformApplication.Current!.Services);
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()

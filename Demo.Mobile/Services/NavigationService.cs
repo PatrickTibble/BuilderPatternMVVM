@@ -48,6 +48,11 @@ namespace Demo.Mobile.Services
                 return _nav.PushAsync(page);
             });
 
+            if (page.BindingContext is IPrepare preparable)
+            {
+                preparable.Prepare(navigationParameters);
+            }
+
             if (page.BindingContext is IInitialize initContext)
             {
                 return initContext.InitializeAsync(navigationParameters, token);

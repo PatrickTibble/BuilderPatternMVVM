@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Demo.Abstraction.Entities;
+using Demo.Core.Entities;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Demo.Core.Extensions
 {
@@ -6,8 +8,8 @@ namespace Demo.Core.Extensions
     {
         public static IServiceCollection RegisterBusinessLayer(this IServiceCollection services)
         {
-
-            return services;
+            return services
+                .AddTransient<IViewModelCollectionBuilder, ViewModelCollectionBuilder>();
         }
     }
 }
