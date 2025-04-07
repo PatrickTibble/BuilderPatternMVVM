@@ -27,5 +27,33 @@ namespace Demo.Core.Entities
             _items.Clear();
             return items;
         }
+
+        public IViewModelCollectionBuilder WithTwoWayBinding<T>(IBindable source, string propertyName, Action<T> sourcePropertyChanged, Action<T> targetPropertyChanged)
+        {
+            return this
+                .WithOneWayToSourceBinding(propertyName, targetPropertyChanged)
+                .WithOneWayBinding(source, propertyName, sourcePropertyChanged);
+        }
+
+        public IViewModelCollectionBuilder WithOneWayToSourceBinding<T>(string propertyName, Action<T> propertyChanged)
+        {
+            if (_items.LastOrDefault() is IBindable bindable
+                && bindable is T binding)
+            {
+                bindable.AddBinding(propertyName, propertyChanged);
+            }
+
+            return this;
+        }
+
+        public IViewModelCollectionBuilder WithOneWayBinding<T>(IBindable bindable, string propertyName, Action<T> propertyChanged)
+        {
+            if (_items.LastOrDefault() is T binding)
+            {
+                bindable.AddBinding(propertyName, propertyChanged);
+            }
+
+            return this;
+        }
     }
 }
