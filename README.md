@@ -1,7 +1,7 @@
 # Builder Pattern in MVVM
 Demonstrates using a ViewModel Builder to compose UIs in MVVM
 
-![main page](./dotnet_maui_main_page.png "Main Page")
+![main page](./dotnet_maui_main_page.png "Main Page" =200x)
 
 ## The Parts of the Puzzle
 
