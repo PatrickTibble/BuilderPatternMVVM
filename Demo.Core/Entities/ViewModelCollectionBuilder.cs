@@ -105,5 +105,14 @@ namespace Demo.Core.Entities
 
             return this;
         }
+
+        public IViewModelCollectionBuilder WithLayoutOptions(LayoutOptions layoutOptions)
+        {
+            if (_items.LastOrDefault() is ILayoutOptions layout)
+            {
+                layout.LayoutOptions = layoutOptions;
+            }
+            return this;
+        }
     }
 }

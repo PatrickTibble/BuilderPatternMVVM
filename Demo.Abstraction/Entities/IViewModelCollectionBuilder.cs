@@ -19,6 +19,7 @@ namespace Demo.Abstraction.Entities
         IViewModelCollectionBuilder WithTwoWayBinding<T>(IBindable source, string propertyName, Action<T> sourcePropertyChanged, Action<T> targetPropertyChanged);
 
         IViewModelCollectionBuilder WithSemanticProperties(SemanticOptions level, string description);
+        IViewModelCollectionBuilder WithLayoutOptions(LayoutOptions layoutOptions);
 
         //-- Build
         IList<INotifyPropertyChanged> Build();

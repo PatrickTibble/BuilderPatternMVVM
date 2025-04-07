@@ -10,6 +10,8 @@
         Margin="30,12">
         <Label
             Text="{Binding Text}"
+            HorizontalOptions="{Binding LayoutOptions, Converter={converters:LayoutOptionsConverter}}"
+            HorizontalTextAlignment="{Binding LayoutOptions, Converter={converters:TextAlignmentConverter}}"
             TextColor="{AppThemeBinding Light={StaticResource MidnightBlue}, Dark={StaticResource White}}"
             FontSize="{Binding SemanticLevel, Converter={converters:HeadingLevelToFontSizeConverter}}"
             SemanticProperties.HeadingLevel="{Binding SemanticLevel, Converter={converters:HeadingLevelConverter}}" />
